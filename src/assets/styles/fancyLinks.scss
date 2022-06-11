@@ -1,0 +1,65 @@
+@import 'base.scss';
+.fancyLink {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scale3d(0, 1, 1);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+  }
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transform: translate3d(150%, 0, 0);
+    transition: transform 0.3s ease-in-out;
+  }
+  & span {
+    transition: transform 0.3s ease-in-out;
+  }
+  &:hover:before {
+    transform: scale3d(1, 1, 1);
+    transform-origin: left;
+  }
+  &:hover:after {
+    transform: translate3d(0, 0, 0);
+  }
+  &:hover span {
+    transform: translate3d(-150%, 0, 0);
+  }
+}
+
+.coloredIcon {
+  color: #fff;
+  font-size: 35px;
+  &:hover {
+    animation: coloredIconAnimation 0.2s infinite;
+  }
+  @keyframes coloredIconAnimation {
+    0% {
+      text-shadow: 5px 4px $red-color, -5px -6px $blue-color;
+    }
+    25% {
+      text-shadow: -5px -6px $red-color, 5px 4px $blue-color;
+    }
+    50% {
+      text-shadow: 5px -4px $red-color, -8px 4px $blue-color;
+    }
+    75% {
+      text-shadow: -8px -4px $red-color, -5px -4px $blue-color;
+    }
+    100% {
+      text-shadow: -5px 0 $red-color, 5px -4px $blue-color;
+    }
+  }
+}
