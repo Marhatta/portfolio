@@ -1,14 +1,16 @@
 import * as THREE from "three";
-import img1 from "../images/pp.png";
-import img2 from "../images/shapes/158.jpg";
-import img3 from "../images/shapes/165.jpg";
+import img1 from "../images/shapes/ui.jpg";
+import img2 from "../images/pp.png";
+import img3 from "../images/shapes/india.jpg";
+import img4 from "../images/shapes/code2.jpg";
 import vertex from "../js/shaders/vertex.glsl";
 import fragment from "../js/shaders/fragment.glsl";
 
 const loader = new THREE.TextureLoader();
 const texture1 = loader.load(img1);
 const texture2 = loader.load(img2);
-const texture3 = loader.load(img3);
+const texture3 = loader.load(img4);
+const texture4 = loader.load(img3);
 
 function lerp(start, end, t) {
   return start * (1 - t) + end * t;
@@ -45,7 +47,7 @@ class Shaded {
             this.uniforms.uTexture.value = texture3;
             break;
           case 3:
-            this.uniforms.uTexture.value = texture1;
+            this.uniforms.uTexture.value = texture4;
             break;
         }
       });

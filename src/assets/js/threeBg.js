@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import shape1 from "../images/shapes/24.jpg";
+import shape1 from "../images/shapes/bg.jpg";
 
 const container = document.querySelector(".three_bg");
 const loader = new THREE.TextureLoader();
@@ -24,7 +24,7 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-const geometry = new THREE.PlaneGeometry(22, 10, 10, 9);
+const geometry = new THREE.PlaneGeometry(22, 12, 8, 14);
 const material = new THREE.MeshBasicMaterial({
   map: loader.load(shape1),
 });
