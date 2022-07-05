@@ -1,4 +1,4 @@
-@import 'base.scss';
+@import "base.scss";
 .landing {
   position: relative;
   width: 100%;
@@ -6,11 +6,11 @@
   background: #111;
   color: #fff;
   overflow: hidden;
-  background-image: url('../images/shapes/89.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+
   .header {
-    z-index: 2;
+    z-index: 9;
     position: absolute;
     top: 1rem;
     left: 50%;
@@ -44,13 +44,13 @@
     }
     @media (max-width: 370px) {
       left: 40%;
-      .fancyLink[data-text='Home'] {
+      .fancyLink[data-text="Home"] {
         display: none;
       }
     }
   }
   .socials {
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -62,6 +62,7 @@
 
   .scrollDown {
     position: absolute;
+    z-index: 1;
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
@@ -141,14 +142,14 @@
   }
 
   .intro {
-    position: relative;
+    position: absolute;
+    z-index: 9;
     top: 23%;
     left: 5%;
     width: 100%;
     height: 60%;
-    z-index: 2;
     color: #fff;
-    font-family: 'Pacifico', sans-serif;
+    font-family: "Pacifico", sans-serif;
     h4 {
       font-size: 37px;
     }
@@ -167,4 +168,9 @@
       }
     }
   }
+}
+
+.landing canvas {
+  position: absolute;
+  z-index: 1;
 }
